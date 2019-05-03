@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:WordScapeSolver.xcodeproj">
+      location = "group:/Users/yifant/Documents/Swift/WordScapeSolver/WordScapeSolver/RatingControl.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/yifant/Documents/Swift/WordScapeSolver/WordScapeSolver/Words.swift">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>

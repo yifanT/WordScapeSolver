@@ -1,24 +1,187 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uFZ-HW-ahG">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Word List-->
+        <scene sceneID="0h0-Qi-ZxV">
+            <objects>
+                <tableViewController id="6dE-7e-OJ8" customClass="WordTableViewController" customModule="WordScapeSolver" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Veo-xz-8pM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WordTableViewCell" rowHeight="90" id="UKW-mQ-RQc" customClass="WordTableViewCell" customModule="WordScapeSolver" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UKW-mQ-RQc" id="7Qs-WL-4Fg" customClass="WordTableViewCell" customModule="WordScapeSolver" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.666666666666671"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DefaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="nKM-G1-Sgj">
+                                            <rect key="frame" x="0.0" y="0.0" width="95" height="90"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dr5-Fh-3mZ">
+                                            <rect key="frame" x="103" y="8" width="264" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jfo-5Z-lZl" customClass="RatingControl" customModule="WordScapeSolver" customModuleProvider="target">
+                                            <rect key="frame" x="103" y="37" width="252" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </stackView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="Dr5-Fh-3mZ" id="Nwk-0r-Jji"/>
+                                    <outlet property="photoImageView" destination="nKM-G1-Sgj" id="0ZR-eI-UDR"/>
+                                    <outlet property="ratingControl" destination="jfo-5Z-lZl" id="Mn7-2f-eYm"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetail" id="kMh-2j-SZH"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="6dE-7e-OJ8" id="Au2-LM-TBh"/>
+                            <outlet property="delegate" destination="6dE-7e-OJ8" id="8L5-h3-4Ve"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Word List" id="rZX-5Y-DBJ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="wlP-1C-1oZ">
+                            <connections>
+                                <segue destination="Zvk-z2-kOR" kind="presentation" identifier="AddItem" id="h0O-u0-hJY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bGG-Sv-WA1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="188" y="128.57142857142858"/>
+        </scene>
+        <!--New Word-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WordViewController" customModule="WordScapeSolver" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="G1N-Ef-0nv">
+                                <rect key="frame" x="0.0" y="108" width="375" height="410"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Word" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jd3-ER-XKH">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                    </textField>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="DefaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="za7-2N-QBv">
+                                        <rect key="frame" x="27.666666666666657" y="38" width="320" height="320"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="za7-2N-QBv" secondAttribute="height" multiplier="1:1" id="qLg-cm-qe7"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="pPj-Et-dHg" appends="YES" id="DBW-JT-Xrv"/>
+                                        </connections>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y2O-ha-peY" customClass="RatingControl" customModule="WordScapeSolver" customModuleProvider="target">
+                                        <rect key="frame" x="77.666666666666686" y="366" width="220" height="44"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Jd3-ER-XKH" secondAttribute="trailing" id="1Tt-u8-LEE"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="G1N-Ef-0nv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="FX6-de-VdB"/>
+                            <constraint firstItem="G1N-Ef-0nv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ihq-94-hos"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="G1N-Ef-0nv" secondAttribute="trailing" id="sBM-Le-1lU"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="New Word" id="yDc-jo-Y7h">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Gt6-ga-jVa">
+                            <connections>
+                                <action selector="cancel:" destination="BYZ-38-t0r" id="ONq-BW-pe7"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="DZf-ea-Ad9">
+                            <connections>
+                                <segue destination="dw7-yq-0vj" kind="unwind" unwindAction="unwindToWordListWithSender:" id="y8S-km-Fpp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="nameTextField" destination="Jd3-ER-XKH" id="Uhj-ZG-NK4"/>
+                        <outlet property="photoImageView" destination="za7-2N-QBv" id="vfR-LD-dp3"/>
+                        <outlet property="ratingControl" destination="y2O-ha-peY" id="jEb-o5-oeZ"/>
+                        <outlet property="saveButton" destination="DZf-ea-Ad9" id="7jS-91-bMj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="dw7-yq-0vj" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="pPj-Et-dHg">
+                    <connections>
+                        <action selector="selectPhoto:" destination="BYZ-38-t0r" id="QZv-ib-9NJ"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="1710" y="129"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="UL7-p5-n4B">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uFZ-HW-ahG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9hB-0K-xFk">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6dE-7e-OJ8" kind="relationship" relationship="rootViewController" id="Lsm-eR-GYn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JKI-hs-rIE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-570" y="129"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="AtM-bn-yHQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zvk-z2-kOR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PgW-M0-Gfx">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="WLJ-OW-Mad"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UhU-8l-qRP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="950" y="493"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="DefaultPhoto" width="150" height="141"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="kMh-2j-SZH"/>
+    </inferredMetricsTieBreakers>
 </document>
