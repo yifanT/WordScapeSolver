@@ -13,7 +13,7 @@
 		FB11003C22612B9300062DC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB11003A22612B9300062DC9 /* LaunchScreen.storyboard */; };
 		FB11004722612B9300062DC9 /* WordScapeSolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB11004622612B9300062DC9 /* WordScapeSolverTests.swift */; };
 		FB4C9CB2227BC3A9001F7064 /* Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4C9CB1227BC3A9001F7064 /* Words.swift */; };
-		FB4C9CB5227BF8A4001F7064 /* words_alpha.txt in Resources */ = {isa = PBXBuildFile; fileRef = FB4C9CB4227BF8A4001F7064 /* words_alpha.txt */; };
+		FB4C9CB5227BF8A4001F7064 /* complete.txt in Resources */ = {isa = PBXBuildFile; fileRef = FB4C9CB4227BF8A4001F7064 /* complete.txt */; };
 		FB4C9CB7227CD894001F7064 /* SearchWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4C9CB6227CD894001F7064 /* SearchWordViewController.swift */; };
 		FBEF3B2B228CF0E400D2F9B2 /* popular.txt in Resources */ = {isa = PBXBuildFile; fileRef = FBEF3B2A228CF0E400D2F9B2 /* popular.txt */; };
 /* End PBXBuildFile section */
@@ -39,7 +39,7 @@
 		FB11004622612B9300062DC9 /* WordScapeSolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordScapeSolverTests.swift; sourceTree = "<group>"; };
 		FB11004822612B9300062DC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB4C9CB1227BC3A9001F7064 /* Words.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Words.swift; path = /Users/yifant/Documents/Swift/WordScapeSolver/WordScapeSolver/Words.swift; sourceTree = "<absolute>"; };
-		FB4C9CB4227BF8A4001F7064 /* words_alpha.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words_alpha.txt; sourceTree = "<group>"; };
+		FB4C9CB4227BF8A4001F7064 /* complete.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = complete.txt; sourceTree = "<group>"; };
 		FB4C9CB6227CD894001F7064 /* SearchWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordViewController.swift; sourceTree = "<group>"; };
 		FBEF3B2A228CF0E400D2F9B2 /* popular.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = popular.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,7 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				FBEF3B2A228CF0E400D2F9B2 /* popular.txt */,
-				FB4C9CB4227BF8A4001F7064 /* words_alpha.txt */,
+				FB4C9CB4227BF8A4001F7064 /* complete.txt */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -196,7 +196,7 @@
 			files = (
 				FB11003C22612B9300062DC9 /* LaunchScreen.storyboard in Resources */,
 				FBEF3B2B228CF0E400D2F9B2 /* popular.txt in Resources */,
-				FB4C9CB5227BF8A4001F7064 /* words_alpha.txt in Resources */,
+				FB4C9CB5227BF8A4001F7064 /* complete.txt in Resources */,
 				FB11003922612B9300062DC9 /* Assets.xcassets in Resources */,
 				FB11003722612B9200062DC9 /* Main.storyboard in Resources */,
 			);
