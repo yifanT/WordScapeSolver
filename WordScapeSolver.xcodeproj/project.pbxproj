@@ -42,6 +42,7 @@
 		FB4C9CB4227BF8A4001F7064 /* complete.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = complete.txt; sourceTree = "<group>"; };
 		FB4C9CB6227CD894001F7064 /* SearchWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordViewController.swift; sourceTree = "<group>"; };
 		FBEF3B2A228CF0E400D2F9B2 /* popular.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = popular.txt; sourceTree = "<group>"; };
+		FBEF3B2C228D350A00D2F9B2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +66,7 @@
 		FB11002522612B9200062DC9 = {
 			isa = PBXGroup;
 			children = (
+				FBEF3B2C228D350A00D2F9B2 /* README.md */,
 				FB11003022612B9200062DC9 /* WordScapeSolver */,
 				FB11004522612B9300062DC9 /* WordScapeSolverTests */,
 				FB11002F22612B9200062DC9 /* Products */,
