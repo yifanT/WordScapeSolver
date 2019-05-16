@@ -2,8 +2,8 @@
 //  Words.swift
 //  WordScapeSolver
 //
-//  Created by 汤逸凡 on 2019/4/30.
-//  Copyright © 2019 汤逸凡. All rights reserved.
+//  Created by Yifan Tang on 2019/4/30.
+//  Copyright © 2019 Yifan Tang. All rights reserved.
 //
 
 import UIKit
@@ -12,25 +12,25 @@ import os.log
 class Words: NSObject, NSCoding {
     
     //MARK: Properties
-    var name: String
-    var photo: UIImage?
-    var rating: Int
+    var dictionary: [String]?
+    var anagramDictionary: [String: [String]]?
     
-    init?(name: String, photo: UIImage?, rating: Int) {
-        
-        // Initialization should fail if there is no name or if the rating is negative.
-        guard !name.isEmpty else {
-            return nil
+    init?(anagramDictionary: [String: [String]]?) {
+        super.init()
+        if anagramDictionary != nil {
+            self.anagramDictionary = anagramDictionary
+        } else {
+            // read dictionary from file
+            let path = Bundle.main.path(forResource: "popular", ofType: "txt")!
+            do {
+                let file = try String(contentsOfFile: path)
+                self.dictionary = file.components(separatedBy: "\n")
+                constructAnagramDictionary()
+            } catch {
+                os_log("Fatal Error: Couldn't read the contents!", log: OSLog.default, type: .debug)
+                return nil
+            }
         }
-        
-        // The rating must be between 0 and 5 inclusively
-        guard (rating >= 0) && (rating <= 5) else {
-            return nil
-        }
-        
-        self.name = name
-        self.photo = photo
-        self.rating = rating
     }
     
     //MARK: Archiving Paths
@@ -39,27 +39,38 @@ class Words: NSObject, NSCoding {
     
     //MARK: Types
     struct PropertyKey {
-        static let name = "name"
-        static let photo = "photo"
-        static let rating = "rating"
+        static let anagramDictionary = "anagramDictionary"
     }
     
     //MARK: NSCoding
     func encode(with aCoder: NSCoder) {
-        aCoder.encode(name, forKey: PropertyKey.name)
-        aCoder.encode(photo, forKey: PropertyKey.photo)
-        aCoder.encode(rating, forKey: PropertyKey.rating)
+        aCoder.encode(anagramDictionary, forKey: PropertyKey.anagramDictionary)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
-        // The name is required. If we cannot decode a name string, the initializer should fail.
-        guard let name = aDecoder.decodeObject(forKey: PropertyKey.name) as? String else {
-            os_log("Unable to decode the name for a Meal object.", log: OSLog.default, type: .debug)
-            return nil
-        }
-        let photo = aDecoder.decodeObject(forKey: PropertyKey.photo) as? UIImage
-        let rating = aDecoder.decodeInteger(forKey: PropertyKey.rating)
-        self.init(name: name, photo: photo, rating: rating)
+        let anagramDictionary = aDecoder.decodeObject(forKey: PropertyKey.anagramDictionary) as? [String: [String]]
+        self.init(anagramDictionary: anagramDictionary)
     }
-
+    
+    //MARK: Public Methods
+    func getAnagram(word: String) -> [String]? {
+        let sortedWord = String(word.sorted())
+        return anagramDictionary?[sortedWord]
+    }
+    
+    //MARK: Private Methods
+    private func constructAnagramDictionary() {
+        let dict = dictionary!
+        anagramDictionary = [:]
+        for i in 0..<dict.count {
+            let sortedWord = String(dict[i].sorted())
+            if (anagramDictionary![sortedWord] == nil) {
+                anagramDictionary![sortedWord] = [dict[i]]
+            } else {
+                var arr = anagramDictionary![sortedWord]!
+                arr.append(dict[i])
+                anagramDictionary![sortedWord] = arr
+            }
+        }
+    }
 }

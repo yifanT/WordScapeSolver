@@ -2,37 +2,48 @@
 //  WordScapeSolverTests.swift
 //  WordScapeSolverTests
 //
-//  Created by 汤逸凡 on 2019/4/12.
-//  Copyright © 2019 汤逸凡. All rights reserved.
+//  Created by Yifan Tang on 2019/4/12.
+//  Copyright © 2019 Yifan Tang. All rights reserved.
 //
 
 import XCTest
+import os.log
 @testable import WordScapeSolver
 
 class WordScapeSolverTests: XCTestCase {
     
     //MARK: Word Class Tests
-    // Confirm that the Meal initializer returns a Meal object when passed valid parameters.
     func testMealInitializationSucceeds() {
-        let zeroRatingMeal = Words.init(name: "Zero", photo: nil, rating: 0)
-        XCTAssertNotNil(zeroRatingMeal)
-        
-        let positiveRatingMeal = Words.init(name: "Positive", photo: nil, rating: 5)
-        XCTAssertNotNil(positiveRatingMeal)
+        let words = Words(anagramDictionary: nil)!
+        saveDictionary(words: words)
+        let wordsLoaded = loadDictionary()
+        XCTAssertNotNil(words)
+        XCTAssertNotNil(wordsLoaded)
+    }
+    
+    private func saveDictionary(words: Words) {
+        do {
+            let data = try NSKeyedArchiver.archivedData(withRootObject: words, requiringSecureCoding: false)
+            try data.write(to: Words.ArchiveURL)
+            os_log("Dictionary successfully saved.", log: OSLog.default, type: .debug)
+        } catch {
+            os_log("Failed to save dictionary...", log: OSLog.default, type: .error)
+        }
+    }
+    
+    private func loadDictionary() -> Words? {
+        let fullPath = Words.ArchiveURL
+        if let nsData = NSData(contentsOf: fullPath) {
+            do {
+                let data = Data(referencing:nsData)
+                if let dict = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? Words {
+                    return dict
+                }
+            } catch {
+                return nil
+            }
+        }
+        return nil
     }
 
-    // Confirm that the Meal initialier returns nil when passed a negative rating or an empty name.
-    func testMealInitializationFails() {
-        // Negative rating
-        let negativeRatingMeal = Words.init(name: "Negative", photo: nil, rating: -1)
-        XCTAssertNil(negativeRatingMeal)
-        
-        // Empty String
-        let emptyStringMeal = Words.init(name: "", photo: nil, rating: 0)
-        XCTAssertNil(emptyStringMeal)
-        
-        // Rating exceeds maximum
-        let largeRatingMeal = Words.init(name: "Large", photo: nil, rating: 6)
-        XCTAssertNil(largeRatingMeal)
-    }
 }

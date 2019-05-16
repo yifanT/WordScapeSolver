@@ -8,15 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		FB11003222612B9200062DC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB11003122612B9200062DC9 /* AppDelegate.swift */; };
-		FB11003422612B9200062DC9 /* WordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB11003322612B9200062DC9 /* WordViewController.swift */; };
 		FB11003722612B9200062DC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB11003522612B9200062DC9 /* Main.storyboard */; };
 		FB11003922612B9300062DC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB11003822612B9300062DC9 /* Assets.xcassets */; };
 		FB11003C22612B9300062DC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB11003A22612B9300062DC9 /* LaunchScreen.storyboard */; };
 		FB11004722612B9300062DC9 /* WordScapeSolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB11004622612B9300062DC9 /* WordScapeSolverTests.swift */; };
-		FB4C9CA3227A587F001F7064 /* WordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4C9CA2227A587F001F7064 /* WordTableViewController.swift */; };
-		FB4C9CB0227BC38B001F7064 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4C9CAF227BC38B001F7064 /* RatingControl.swift */; };
 		FB4C9CB2227BC3A9001F7064 /* Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4C9CB1227BC3A9001F7064 /* Words.swift */; };
-		FBC57C65227A532800B0346D /* WordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC57C64227A532800B0346D /* WordTableViewCell.swift */; };
+		FB4C9CB5227BF8A4001F7064 /* words_alpha.txt in Resources */ = {isa = PBXBuildFile; fileRef = FB4C9CB4227BF8A4001F7064 /* words_alpha.txt */; };
+		FB4C9CB7227CD894001F7064 /* SearchWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4C9CB6227CD894001F7064 /* SearchWordViewController.swift */; };
+		FBEF3B2B228CF0E400D2F9B2 /* popular.txt in Resources */ = {isa = PBXBuildFile; fileRef = FBEF3B2A228CF0E400D2F9B2 /* popular.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +31,6 @@
 /* Begin PBXFileReference section */
 		FB11002E22612B9200062DC9 /* WordScapeSolver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordScapeSolver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB11003122612B9200062DC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FB11003322612B9200062DC9 /* WordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordViewController.swift; sourceTree = "<group>"; };
 		FB11003622612B9200062DC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FB11003822612B9300062DC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB11003B22612B9300062DC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -40,10 +38,10 @@
 		FB11004222612B9300062DC9 /* WordScapeSolverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WordScapeSolverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB11004622612B9300062DC9 /* WordScapeSolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordScapeSolverTests.swift; sourceTree = "<group>"; };
 		FB11004822612B9300062DC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FB4C9CA2227A587F001F7064 /* WordTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordTableViewController.swift; sourceTree = "<group>"; };
-		FB4C9CAF227BC38B001F7064 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RatingControl.swift; path = /Users/yifant/Documents/Swift/WordScapeSolver/WordScapeSolver/RatingControl.swift; sourceTree = "<absolute>"; };
 		FB4C9CB1227BC3A9001F7064 /* Words.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Words.swift; path = /Users/yifant/Documents/Swift/WordScapeSolver/WordScapeSolver/Words.swift; sourceTree = "<absolute>"; };
-		FBC57C64227A532800B0346D /* WordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordTableViewCell.swift; sourceTree = "<group>"; };
+		FB4C9CB4227BF8A4001F7064 /* words_alpha.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words_alpha.txt; sourceTree = "<group>"; };
+		FB4C9CB6227CD894001F7064 /* SearchWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordViewController.swift; sourceTree = "<group>"; };
+		FBEF3B2A228CF0E400D2F9B2 /* popular.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = popular.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,15 +83,13 @@
 		FB11003022612B9200062DC9 /* WordScapeSolver */ = {
 			isa = PBXGroup;
 			children = (
+				FB4C9CB3227BF867001F7064 /* Assets */,
 				FB11003122612B9200062DC9 /* AppDelegate.swift */,
-				FB11003322612B9200062DC9 /* WordViewController.swift */,
 				FB11003522612B9200062DC9 /* Main.storyboard */,
-				FB4C9CA2227A587F001F7064 /* WordTableViewController.swift */,
-				FBC57C64227A532800B0346D /* WordTableViewCell.swift */,
+				FB4C9CB6227CD894001F7064 /* SearchWordViewController.swift */,
 				FB11003822612B9300062DC9 /* Assets.xcassets */,
 				FB11003A22612B9300062DC9 /* LaunchScreen.storyboard */,
 				FB11003D22612B9300062DC9 /* Info.plist */,
-				FB4C9CAF227BC38B001F7064 /* RatingControl.swift */,
 				FB4C9CB1227BC3A9001F7064 /* Words.swift */,
 			);
 			path = WordScapeSolver;
@@ -106,6 +102,15 @@
 				FB11004822612B9300062DC9 /* Info.plist */,
 			);
 			path = WordScapeSolverTests;
+			sourceTree = "<group>";
+		};
+		FB4C9CB3227BF867001F7064 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				FBEF3B2A228CF0E400D2F9B2 /* popular.txt */,
+				FB4C9CB4227BF8A4001F7064 /* words_alpha.txt */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +195,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB11003C22612B9300062DC9 /* LaunchScreen.storyboard in Resources */,
+				FBEF3B2B228CF0E400D2F9B2 /* popular.txt in Resources */,
+				FB4C9CB5227BF8A4001F7064 /* words_alpha.txt in Resources */,
 				FB11003922612B9300062DC9 /* Assets.xcassets in Resources */,
 				FB11003722612B9200062DC9 /* Main.storyboard in Resources */,
 			);
@@ -209,12 +216,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB11003422612B9200062DC9 /* WordViewController.swift in Sources */,
-				FB4C9CA3227A587F001F7064 /* WordTableViewController.swift in Sources */,
 				FB11003222612B9200062DC9 /* AppDelegate.swift in Sources */,
 				FB4C9CB2227BC3A9001F7064 /* Words.swift in Sources */,
-				FB4C9CB0227BC38B001F7064 /* RatingControl.swift in Sources */,
-				FBC57C65227A532800B0346D /* WordTableViewCell.swift in Sources */,
+				FB4C9CB7227CD894001F7064 /* SearchWordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
